@@ -3,6 +3,15 @@
 # SCRIPT FOR INITIAL UBUNTU SETUP
 # http://www.binarytides.com/better-ubuntu-15-10/
 
+# Add the current logged-in user to sudoers list
+if grep `logname`" ALL" /etc/sudoers>/dev/null
+then
+    echo `logname`" already added to sudoers"
+else
+    echo '# Add the user '`logname`' to sudoers list' | sudo EDITOR='tee -a' visudo
+    echo `logname`' ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
+fi
+
 # Enable canonical repos
 sed -i.bak "/^# deb [^cdrom].*/ s/^# //" /etc/apt/sources.list
 
