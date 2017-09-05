@@ -64,3 +64,5 @@ add-apt-repository ppa:shutter/ppa
 apt-get update
 apt-get install -y shutter
 
+# Install sshpass
+apt-get install -y sshpass
