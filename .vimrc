@@ -3,17 +3,19 @@
 set nocompatible " Use Vim settings, rather then Vi settings
 filetype off                  " required
 
+" ================= Plugin ====================== 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim' " https://github.com/VundleVim/Vundle.vim
 Plugin 'surround.vim'
 Plugin 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plugin 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
+Plugin 'sickill/vim-monokai' " sublime like colorscheme
+Plugin 'airblade/vim-gitgutter' " show changes for git tracked files
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,19 +33,25 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " ================ General Config ====================
-syntax on " enable syntax-based coloring in different files, based on the extension
-set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu
 let g:netrw_browse_split = 4 " opens files fron netrw in a new window
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=1000 " Set bigger history of executed commands
 set mouse=a " Enable mouse for scrolling and resizing
 set autoread "Reload files changed outside vim
+set foldenable          " enable folding
+
+" ================= Display ====================
+colorscheme monokai " Sublime Text like colorcheme
+highlight ColorColumn ctermbg=gray 
+set colorcolumn=80 " Show ruler at 80 char
+syntax on " enable syntax-based coloring in different files, based on the extension
+set cursorline " highlight current line
 
 " ================ Status Bar ===================
 set laststatus=2 " Always display the status bar
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'wombat',
       \ }
 let g:lightline.component = {
       \ 'percent': '%3p%% (%l:%L)'} 
