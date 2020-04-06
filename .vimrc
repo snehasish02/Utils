@@ -18,6 +18,7 @@ Plugin 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plugin 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
 Plugin 'sickill/vim-monokai' " sublime like colorscheme
 Plugin 'airblade/vim-gitgutter' " show changes for git tracked files
+Plugin 'Tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
