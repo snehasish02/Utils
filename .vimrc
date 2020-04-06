@@ -37,7 +37,7 @@ set wildmenu " visual autocomplete for command menu
 let g:netrw_browse_split = 4 " opens files fron netrw in a new window
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=1000 " Set bigger history of executed commands
-set mouse=a " Enable mouse for scrolling and resizing
+"set mouse=a " Enable mouse for scrolling and resizing
 set autoread "Reload files changed outside vim
 set foldenable          " enable folding
 
