@@ -48,8 +48,9 @@ set foldenable          " enable folding
 colorscheme monokai " Sublime Text like colorcheme
 highlight ColorColumn ctermbg=gray 
 set colorcolumn=80 " Show ruler at 80 char
-syntax on " enable syntax-based coloring in different files, based on the extension
+syntax enable " enable syntax-based coloring in different files, based on the extension
 set cursorline " highlight current line
+set title " Set the window’s title, reflecting the file currently being edited
 
 " ================ Status Bar ===================
 set laststatus=2 " Always display the status bar
@@ -85,3 +86,7 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+" ==================== CTAGS =========================
+set tags=.tags;/ " Look into the current directory for tags and then work up the dir tree to find the tags file
+
