@@ -18,7 +18,8 @@ Plugin 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plugin 'itchyny/lightline.vim' " https://github.com/itchyny/lightline.vim
 Plugin 'sickill/vim-monokai' " sublime like colorscheme
 Plugin 'airblade/vim-gitgutter' " show changes for git tracked files
-Plugin 'Tagbar'
+Plugin 'Tagbar' " Show a tagbar with all the tags in a file sorted by type of tag
+Plugin 'AutoTag' " Automatically update ctags
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,5 +89,8 @@ augroup numbertoggle
 augroup END
 
 " ==================== CTAGS =========================
-set tags=.tags;/ " Look into the current directory for tags and then work up the dir tree to find the tags file
+set tags=tags;/ " Look into the current directory for tags and then work up the dir tree to find the tags file
+nnoremap <silent> <Leader>b :TagbarToggle<CR> " Toggle tagbar with '\b'
+
+set path=$PWD/** " Set path as the current directory to enable recursive search
 
