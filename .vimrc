@@ -45,6 +45,12 @@ set history=1000 " Set bigger history of executed commands
 set autoread "Reload files changed outside vim
 set foldenable          " enable folding
 
+" Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " ================= Display ====================
 colorscheme monokai " Sublime Text like colorcheme
 highlight ColorColumn ctermbg=gray 
