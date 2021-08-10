@@ -3,7 +3,7 @@
 set nocompatible " Use Vim settings, rather then Vi settings
 filetype off                  " required
 
-" ================= Plugin ====================== 
+" ================= Plugin ======================
 " set the runtime path to include Vundle and initialize
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -51,9 +51,11 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespaces
+
 " ================= Display ====================
 colorscheme monokai " Sublime Text like colorcheme
-highlight ColorColumn ctermbg=gray 
+highlight ColorColumn ctermbg=gray
 set colorcolumn=80 " Show ruler at 80 char
 syntax enable " enable syntax-based coloring in different files, based on the extension
 set cursorline " highlight current line
@@ -65,7 +67,7 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 let g:lightline.component = {
-      \ 'percent': '%3p%% (%l:%L)'} 
+      \ 'percent': '%3p%% (%l:%L)'}
 let g:lightline.active = {
 		    \ 'left': [ [ 'mode', 'paste' ],
 		    \           [ 'readonly', 'absolutepath', 'modified' ] ]}
@@ -80,6 +82,8 @@ set softtabstop=4 " number of spaces in tab when editing
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
+" Ctrl+L after search to remove highlights
+nmap <silent> <C-L> <C-L>:nohlsearch<CR>:match<CR>:diffupdate<CR>
 
 " ================= Undo related settings ======================
 set undodir=~/.vim/undodir " set undo dir. Undo history of all files will be stored here
