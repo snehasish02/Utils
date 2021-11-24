@@ -46,10 +46,10 @@ set autoread "Reload files changed outside vim
 set foldenable          " enable folding
 
 " Disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespaces
 
